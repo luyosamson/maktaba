@@ -22,6 +22,7 @@ const Navbar = () => {
 
       {/* Navigation Links */}
       <div className="hidden md:flex space-x-4 text-sm">
+       
         <a><Link to="/" className="hover:underline hover:text-blue-600">Home</Link></a>
         <a><Link to="/books" className="hover:underline hover:text-blue-600">Browse Books</Link></a>
         <a><Link to="/contactus" className="hover:underline hover:text-blue-600">Contact Us</Link></a>

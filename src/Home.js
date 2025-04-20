@@ -1,6 +1,12 @@
 
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom'; // at the top
+import Aliet from './assets/aliet.jpg';
+import Silas from './assets/silas nyanchwani.jpg';
+import Chinua from './assets/ngugi.jpg';
+import Ngugi from './assets/ngugi.jpg'; // If separate, otherwise remove this
+
+
 import './index.css';
 import './SearchBar';
 import './Footer'
@@ -26,7 +32,7 @@ const Home = () => {
 
       {/* Categories */}
       <section className="py-16 bg-gray-50 px-4">
-        <h3 className="text-2xl font-semibold text-center mb-10">Shop by Category</h3>
+        <h3 className="text-2xl font-semibold text-center mb-10">Our Top Categories</h3>
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 max-w-6xl mx-auto">
           {['Fiction', 'Masculinity', 'Business', 'Biography', 'Self-help'].map((category, index) => (
             <div key={index} className="bg-white shadow p-4 text-center rounded hover:shadow-lg cursor-pointer">
@@ -111,22 +117,33 @@ const Home = () => {
 
 
       {/* Top Authors */}
-      <section className="py-16 px-4">
-        <h3 className="text-2xl font-semibold text-center mb-10">Top Authors</h3>
-        <div className="flex flex-wrap justify-center gap-6">
-          {[
-            { name: "Ngugi wa Thiong'o", img: "https://upload.wikimedia.org/wikipedia/commons/e/e2/Ngugi_wa_Thiong%27o_%28cropped%29.jpg" },
-            { name: 'Chinua Achebe', img: "https://upload.wikimedia.org/wikipedia/en/7/73/Chinua_Achebe_%28cropped%29.jpg" },
-            { name: 'Binyavanga Wainaina', img: "https://upload.wikimedia.org/wikipedia/commons/b/b3/Binyavanga_Wainaina_2010.jpg" },
-            { name: 'Yvonne Owuor', img: "https://upload.wikimedia.org/wikipedia/commons/6/60/Yvonne_Adhiambo_Owuor_2018.jpg" },
-          ].map((author, index) => (
-            <div key={index} className="bg-blue-50 shadow p-4 rounded w-full sm:w-52 text-center">
-              <img src={author.img} alt={author.name} className="w-24 h-24 object-cover mx-auto rounded-full mb-2" />
-              <p className="text-lg font-medium text-blue-600">{author.name}</p>
-            </div>
-          ))}
-        </div>
-      </section>
+{/* Top Authors */}
+{/* Top Authors */}
+<section className="py-16 px-4">
+  <h3 className="text-2xl font-semibold text-center mb-10">Top Authors</h3>
+  <div className="flex flex-wrap justify-center gap-6">
+    {[
+      { name: "Aliet A", img: Aliet },
+      { name: "Silas Nyanchwani", img: Silas },
+      { name: "Chinua Achebe", img: Chinua },
+      { name: "Ngũgĩ wa Thiong'o", img: Ngugi },
+    ].map((author, index) => (
+      <div
+        key={index}
+        className="bg-white shadow-md p-4 rounded w-full sm:w-48 md:w-52 text-center hover:shadow-lg transition"
+      >
+        <img
+          src={author.img}
+          alt={author.name}
+          className="w-28 h-28 object-cover mx-auto rounded-full mb-4 border-2 border-blue-200"
+        />
+        <p className="text-lg font-semibold text-blue-700">{author.name}</p>
+      </div>
+    ))}
+  </div>
+</section>
+
+
 
 
     </div>
