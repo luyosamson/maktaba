@@ -1,22 +1,16 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import './index.css'; // Make sure this imports index.css where Tailwind is applied
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <h1 className="text-4xl text-blue-500 font-bold">
+          TailwindCSS is working!
+        </h1>
+        <button className="bg-blue-500 text-white px-4 py-2 rounded-lg mt-4 hover:bg-blue-700">
+          Test Button
+        </button>
       </header>
     </div>
   );
