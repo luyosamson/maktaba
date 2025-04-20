@@ -1,19 +1,40 @@
+// App.js
 import React from 'react';
-import './index.css'; // Make sure this imports index.css where Tailwind is applied
+import { Routes, Route } from 'react-router-dom'; // Import only Routes and Route
+import Auth from './Auth';
+import Home from './Home';
+import Navbar from './Navbar';
+import ProductDetails from './ProductDetails';
+import Footer from './Footer';
+import ContactUs from './ContactUs';
+import AboutUs from './AboutUs';
+import BrowseBooks from './Books';
 
-function App() {
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <h1 className="text-4xl text-blue-500 font-bold">
-          TailwindCSS is working!
-        </h1>
-        <button className="bg-blue-500 text-white px-4 py-2 rounded-lg mt-4 hover:bg-blue-700">
-          Test Button
-        </button>
-      </header>
-    </div>
+    <>
+      {/* Navbar will always be visible */}
+      <Navbar />
+      <div className="pt-16"> {/* Add padding-top to offset the fixed navbar */}
+        {/* Routes to switch between pages */}
+        <Routes>
+          {/* <Route path="/" element={<Auth />} /> */}
+          <Route path="/" element={<Home />} />
+          <Route path="/product/:id" element={<ProductDetails />} />
+          <Route path="/auth" element={<Auth />} />
+          <Route path="/aboutus" element={<AboutUs />} />
+          <Route path="/contactus" element={<ContactUs />} />
+          <Route path="/books" element={<BrowseBooks />} />
+
+
+
+
+        </Routes>
+        <Footer />
+      </div>
+    </>
   );
-}
+};
 
 export default App;
